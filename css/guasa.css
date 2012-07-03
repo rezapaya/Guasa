@@ -330,6 +330,12 @@ body>section#chat>div#bottom>div#msg{
 	outline: 0;
 	overflow: auto;
 }
+img.emoji{
+	display: inline;
+	vertical-align: bottom;
+	width: 24px;
+	height: 24px;
+}
 body>section#chat>div#bottom>div#msg:focus{
 	border: 1px solid #FB3;
 }

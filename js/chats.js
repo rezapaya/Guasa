@@ -9,10 +9,23 @@ $("document").ready(function(){
 	for(i in emoji){
 		$("body>section#chat>ul#emoticons").append("<li>");
 		for(j in emoji[i]){
-			$("body>section#chat>ul#emoticons>li:eq("+i+")").append("<img src=\"img/emoji/emoji-E" + emoji[i][j] + ".png\" alt=\""+"\" />");
+			$("body>section#chat>ul#emoticons>li:eq("+i+")").append("<img src=\"img/emoji/emoji-E" + emoji[i][j] + ".png\" alt=\""+"\" onclick=\"emojiWrite('E" + emoji[i][j] + "')\" class=\"emoji\"/>");
 		}
 	}
 });
+
+function emojiWrite(code){
+	$("body>section#chat>div#bottom>div#msg").append(" <img src=\"img/emoji/emoji-" + code + ".png\" alt=\""+ String.fromCharCode(parseInt(code, 16)) + "\"/>");
+}
+
+function emojiToChar(str){
+	str = str.replace("<br>", "");
+	return str.replace(/<img[^>]+alt="([^">]+)"[^>]*>/gi, '$1');
+}
+
+function charToEmoji(str){
+	return str.replace(/([\uE000-\uFFFF])/g, function(match){return "<img src=\"img/emoji/emoji-" + ord(match).toString(16).toUpperCase() + ".png\" class=\"emoji\" />";});
+}
 
 function chatList(){
 	if(g.chats && g.chats.length > 0){
@@ -101,7 +114,7 @@ function chatPull(ci){
 function msgSend(){
 	chat = g.chats[g.chats.length-1];
 	contact = g.contacts[chat.contact];
-	msg = trim(str_replace("<br>", "", $("body>section#chat>div#bottom>div#msg").html()));
+	msg = emojiToChar($("body>section#chat>div#bottom>div#msg").html());
 	if(msg.length>0){
 		$("body>section#chat>div#bottom>div#msg").empty();
 		if(!chat.messages || chat.messages.length<=0)chat.messages = new Array();
@@ -126,7 +139,7 @@ function msgRender(){
 	$("body>section#chat>ul#messages").empty();
 	for(i in chat.messages){
 		msg = chat.messages[i];
-		$("body>section#chat>ul#messages").append("<li class=\"" + msg.class + "\"><span id=\"body\">" + msg.body + "</span><span id=\"timestamp\">" + date("G:i", msg.timestamp) + "</span></li>");
+		$("body>section#chat>ul#messages").append("<li class=\"" + msg.class + "\"><span id=\"body\">" + charToEmoji(msg.body) + "</span><span id=\"timestamp\">" + date("G:i", msg.timestamp) + "</span></li>");
 	}
 	$("body>section#chat>ul#messages").scrollTop($("body>section#chat>ul#messages").height());
 }
