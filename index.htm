@@ -279,6 +279,7 @@
 			</figure>
 			<div class="tools">
 				<a onclick="load('chats');"><img src="img/back.png" alt="Back..." /></a>
+				<a onclick="$('body>section#chat>ul#emoticons').toggle();"><img src="img/emoji.png" alt="Emoticons..." /></a>
 			</div>
 		</header>
 		<ul id="messages"></ul>
@@ -286,6 +287,8 @@
 			<div id="msg" placeholder="Write here" contenteditable></div>
 			<a id="send" onclick="msgSend();"><img src="img/plane_dark.png" alt="Send" /></a>
 		</div>
+		<ul id="emoticons">
+		</ul>
 	</section>
 	<section id="contacts">
 		<header>
