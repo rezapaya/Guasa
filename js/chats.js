@@ -24,8 +24,8 @@ function chatList(){
 				lastmsg = chat.messages[chat.messages.length-1];
 				if(lastmsg.class=="to")sign = "→";
 				else sign = "←";
-				res = "<li id=\""+ i +"\" onclick=\"chatShow(" + i + ");\"><img src=\"" + contact.photo + "\" alt=\"\" id=\"photo\"/><div id=\"text\">" + contact.name + "<br /><span class=\"small\">" + sign + " " + lastmsg.body + "</span></div></li>";
-			}else res = "<li id=\""+ i +"\" onclick=\"chatShow(" + i + ");\"><img src=\"" + contact.photo + "\" alt=\"\" id=\"photo\"/><div id=\"text\">" + contact.name + "</div></li>";
+				res = "<li id=\""+ i +"\" onclick=\"chatShow(" + i + ");\"><img src=\"" + contact.photo + "\" alt=\"\" class=\"photo\"/><div id=\"text\">" + contact.name + "<br /><span class=\"small\">" + sign + " " + lastmsg.body + "</span></div><img src=\"img/new.png\" alt=\"new\" class=\"new\" /></li>";
+			}else res = "<li id=\""+ i +"\" onclick=\"chatShow(" + i + ");\"><img src=\"" + contact.photo + "\" alt=\"\" class=\"photo\"/><div id=\"text\">" + contact.name + "</div><img src=\"img/new.png\" alt=\"new\" class=\"new\" /></li>";
 			$("body>section#chats>ul#chatslist").append(res);
 		}
 	}else{
@@ -74,6 +74,7 @@ function chatShow(ci){
 		else res = "Not in WhatsApp yet!";
 		$("body>section#chat>header>figure>figcaption>span#lastseen").html(res).fadeIn(200);
 	});
+	$("body>section#chats>ul#chatslist>li#" + chat + ">img.new").hide();
 }
 
 function chatFind(contact){
