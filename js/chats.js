@@ -9,13 +9,14 @@ $("document").ready(function(){
 	for(i in emoji){
 		$("body>section#chat>ul#emoticons").append("<li>");
 		for(j in emoji[i]){
-			$("body>section#chat>ul#emoticons>li:eq("+i+")").append("<img src=\"img/emoji/emoji-E" + emoji[i][j] + ".png\" alt=\""+"\" onclick=\"emojiWrite('E" + emoji[i][j] + "')\" class=\"emoji\"/>");
+			$("body>section#chat>ul#emoticons>li:eq("+i+")").append("<img src=\"img/emoji/emoji-E" + emoji[i][j] + ".png\" alt=\""+"\" onclick=\"emojiWrite('E" + emoji[i][j] + "')\" />");
 		}
 	}
 });
 
 function emojiWrite(code){
-	$("body>section#chat>div#bottom>div#msg").append(" <img src=\"img/emoji/emoji-" + code + ".png\" alt=\""+ String.fromCharCode(parseInt(code, 16)) + "\"/>");
+	$("body>section#chat>div#bottom>div#msg").append(" <img src=\"img/emoji/emoji-" + code + ".png\" alt=\""+ String.fromCharCode(parseInt(code, 16)) + "\" class=\"emoji\" />").focus();
+	$("body>section#chat>ul#emoticons").toggle();
 }
 
 function emojiToChar(str){
