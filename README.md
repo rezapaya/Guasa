@@ -13,6 +13,11 @@ JavaScript WhatsApp client using [WhatsAPI](https://github.com/aesedepece/WhatsA
  7. Fill in the login form. "WhatsAPI URL" is the URL for WhatsAPI server, i.e.: `http://localhost/WhatsAPI/server.php` or `http://example.com/WhatsAPI/server.php`. "IMEI" is the actual IMEI belonging to the phone you registered your WA account with.
  8. That's all. Enjoy!
 
+## Warnings
+ 
+ * The device hosting WhatsAPI needs to be in a network where traffic through port 5222 is allowed. You can check if you can reach WhatsApp servers by executing `telnet c.whatsapp.net 5222` in bash or cmd.
+ * The protocol used by WhatsApp is quite unsafe (both Guasa and official client). We discourage the use of this app for talking about sensitive subjects or "gunpowder plots".
+
 ## Credits
 Thanks to everyone who is helping to debug, proposing features and pushing code.
 As of July 10th, this software contains code from following good-looking people:
