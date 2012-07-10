@@ -10,7 +10,7 @@ JavaScript WhatsApp client using [WhatsAPI](https://github.com/aesedepece/WhatsA
  3. Clone or download a copy of [Guasa](https://github.com/aesedepece/Guasa).
  5. (If you put it in the web server) access with your favourite browser (not MSIE, please) to the proper URL, i.e.: `http://localhost/Guasa/index.htm` or `http://example.com/Guasa/index.htm`.
  6. (If you put it wherever in a PC) just open `index.htm` with Mozilla Firefox (most browsers don't allow some HTML5 features to be runned locally but FF does).
- 7. Fill in the login form. "WhatsAPI URL" is the URL for WhatsAPI server, i.e.: `http://localhost/WhatsAPI/server.php` or `http://example.com/WhatsAPI/server.php`.
+ 7. Fill in the login form. "WhatsAPI URL" is the URL for WhatsAPI server, i.e.: `http://localhost/WhatsAPI/server.php` or `http://example.com/WhatsAPI/server.php`. "IMEI" is the actual IMEI belonging to the phone you registered your WA account with.
  8. That's all. Enjoy!
 
 ## Credits
