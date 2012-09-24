@@ -1,6 +1,8 @@
 Guasa
 =====
 
+BECAUSE OF RECENT UPDATES IN WHATSAPI AND THE WHATSAPP PROTOCOL, THIS CLIENT IS NOT WORKING ANYMORE.
+
 JavaScript WhatsApp client using [WhatsAPI](https://github.com/aesedepece/WhatsAPI).
 
 ## Setting up
